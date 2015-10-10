@@ -1,5 +1,5 @@
 <?php
-//アプリのトップページのphpファイル
+//アプリのspotページのphpファイル
 ?>
 
 <?php
@@ -69,17 +69,18 @@ $recordSetMovie = mysql_query("SELECT * FROM kiso_movie WHERE  spot_id='$id'", $
 			while($movie_data = mysql_fetch_assoc($recordSetMovie)){
 		?>
 			<div class="col-xs-6">
-				<h3><?php echo $movie_data['movie_title'];?></h3><br /><br />
+				<h3><?php echo $movie_data['movie_title'];?></h3><br />
 				<a href="play.php?id=<?php echo $movie_data['movie_id'];?>">
-					<img src="movie_photo/<?php echo $movie_data['movie_img'];?>.jpg" class="imv-responsive" width="100%">
+					<img src="movie_photo/<?php echo $movie_data['movie_img'];?>.jpg" class="img-responsive" width="100%">
 				</a>
+				<br />
+				<br />
 
 			</div>
 		<?php
 			}
 		?>
 	</div>
-
 </div>
 <br />
 <br />
