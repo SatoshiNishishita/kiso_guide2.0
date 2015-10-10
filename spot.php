@@ -25,6 +25,11 @@ $selectdb = mysql_select_db($DBNAME, $db);
 <head>
 	<meta charset="UTF-8">
 	<title>木曽三川スポット</title>
+	
+	<!-- Bootstrap-->
+	<meta name="viewport" content="initial-scale=1.0, user-scale=no" />
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
 	<!--css-->
 	<link href="">
@@ -35,7 +40,11 @@ $selectdb = mysql_select_db($DBNAME, $db);
 <header>
 </header>
 
+<div class="container">
+
 水屋
+
+<div class="container">
 
 <footer>
 </footer>
