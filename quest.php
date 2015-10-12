@@ -60,6 +60,7 @@ $data = mysql_fetch_assoc($recordSet);
 		 		<div>
 		 			<h2 class="text-center"><?php echo $data['question_title'];?></h3><br />
 		 			<h3><?php echo $data['question_q'];?></h3><br />
+		 			<img src="photo/<?php echo $data['question_img'];?>.jpg" class="img-responsive">
 		 			<form action="quest.php" method="get">
 		 				<input type="hidden" name="id" value="<?php echo $data['question_id'];?>">
 		 				<input type="submit" name="name" value="<?php echo $data['answer1'];?>">
