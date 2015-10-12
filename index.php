@@ -52,7 +52,7 @@ $selectdb = mysql_select_db($DBNAME, $db);
 		<button type="button" onclick="location.href= 'map.php'">学ぶ</button>
 	</div>
 	<div class="col-xs-6">
-		<button type="button" onclick="location.href= 'quest.php'">クイズ</button>
+		<button type="button" onclick="location.href= 'quest.php?id=1'">クイズ</button>
 	</div>
 	</div>
 
