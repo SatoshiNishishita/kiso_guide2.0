@@ -51,12 +51,26 @@ $data = mysql_fetch_assoc($recordSet);
 <body>
 
 <header>
+	<div class="text-center">
+		<h2>木曽三川公園クイズ</h2><br />
+		<h4>クイズは全部で5問！！全問正解できるかな</h4>
+	</div>
 </header>
 <div class="container">
 
 <div class="col-xs-1">
 </div>
 <div class="col-xs-10">
+	<ul class="nav nav-justified">
+		<li><a href="../kiso_guide2.0">ホーム</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+	</ul><br />
+
+
 		 		<div>
 		 			<h2 class="text-center"><?php echo $data['question_title'];?></h3><br />
 		 			<h3><?php echo $data['question_q'];?></h3><br />
@@ -99,5 +113,8 @@ $data = mysql_fetch_assoc($recordSet);
 
 </div>
 
+<footer>
+	<h4 class="text-center">&copy;YESLab, Nagoya University</h4>
+</footer>
 </body>
 </html>

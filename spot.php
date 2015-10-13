@@ -52,18 +52,32 @@ $recordSetMovie = mysql_query("SELECT * FROM kiso_movie WHERE  spot_id='$id'", $
 		<h4><?php echo $data['spot_text'];?></h4>
 	</div>
 	
-	<div class="col-xs-4">
+	<div class="col-xs-3">
 		<img src="photo/<?php echo $data['spot_photo'];?>.jpg"width="100%">
+	</div>
+	<div class="col-xs-1">
 	</div>
 	</div>
 
 </header>
+<br />
+<br />
 
 <br />
 <br />
 <br />
 
 <div class="container">
+	<ul class="nav nav-justified">
+		<li><a href="../kiso_guide2.0">ホーム</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+	</ul>
+	<br />
+
 	<div class="text-center">
 		<?php
 			while($movie_data = mysql_fetch_assoc($recordSetMovie)){
@@ -84,11 +98,9 @@ $recordSetMovie = mysql_query("SELECT * FROM kiso_movie WHERE  spot_id='$id'", $
 </div>
 <br />
 <br />
-<br />
-<br />
 
 <footer>
-フッター
+	<h4 class="text-center">&copy;YESLab, Nagoya University</h4>
 </footer>
 
 </body>

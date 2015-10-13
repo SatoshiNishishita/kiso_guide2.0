@@ -38,7 +38,10 @@ $recordSet = mysql_query('SELECT * FROM kiso_spot',$db);
 <body>
 
 <header>
-ヘッダー
+	<div class="text-center">
+		<h2>木曽三川公園がくしゅうガイド</h2><br />
+		<h4>木曽三川公園のおすすめのスポットをしらべよう</h4>
+	</div>
 </header>
 
 <br />
@@ -47,6 +50,15 @@ $recordSet = mysql_query('SELECT * FROM kiso_spot',$db);
 
 
 <div class="container">
+	<ul class="nav nav-justified">
+		<li><a href="../kiso_guide2.0">ホーム</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+	</ul><br />
+
 	<div class="col-xs-8">
 		<div class="text-center">
 		ここに地図を入れる
@@ -79,7 +91,7 @@ $recordSet = mysql_query('SELECT * FROM kiso_spot',$db);
 <br />
 
 <footer>
-フッター
+	<h4 class="text-center">&copy;YESLab, Nagoya University</h4>
 </footer>
 
 </body>

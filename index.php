@@ -38,15 +38,27 @@ $selectdb = mysql_select_db($DBNAME, $db);
 
 <header>
 	<div class="text-center">
-		ヘッダー
+		<h2>木曽三川公園がくしゅうガイド</h2><br />
+		<h4>現地に住む人のかいせつを聞いてクイズにチャレンジしよう</h4>
 	</div>
 </header>
+
 
 <br />
 <br />
 <br />
 
 <div class="container">
+	<ul class="nav nav-justified">
+		<li><a href="../kiso_guide2.0">ホーム</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href ="spot.php">各スポット</a></li>
+	</ul>
+	<br />
+
 	<div class="text-center">
 	<div class="col-xs-6">
 		<button type="button" onclick="location.href= 'map.php'">学ぶ</button>
@@ -63,9 +75,7 @@ $selectdb = mysql_select_db($DBNAME, $db);
 <br />
 
 <footer>
-	<div class="text-center">
-		フッター
-	</div>
+	<h4 class="text-center">&copy;YESLab, Nagoya University</h4>
 </footer>
 
 </body>
