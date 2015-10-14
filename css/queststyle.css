@@ -1,0 +1,51 @@
+body{
+	font-size: 20px;
+	color: #666666;
+	letter-spacing: 5px;
+	border: 30px solid#99CCCC
+}
+
+h2{
+       font-family:"07YasashisaAntique","MS Pゴシック",sans-serif;
+	   font-size: 180%;
+	   letter-spacing: 5pt;
+       margin-bottom: 5px;
+        }
+
+h3{
+    font-size: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    color: #666666;
+    background: #f0f0f0;
+    }
+
+h5{
+        font-size: 150%;
+        padding: 10px;
+        }
+
+button[type="button"]{
+    float: right;
+    padding: 5px;
+    margin-right:150px;
+    }
+
+
+li{
+    font-size: 100%
+    padding: 1px;
+    border: 1px solid#99CCCC
+    }
+    
+input{  
+        background: #ffffff;
+        border-color: #ffffff;
+        border-radius: 10px;
+        padding: 5px;
+        }
+
+#photoimg {
+	border: solid 1px #123;
+}

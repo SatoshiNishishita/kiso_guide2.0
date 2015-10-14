@@ -5,16 +5,12 @@
 <?php
 //データベースに接続
 require('dbconnect.php');
-
 // MySQLとの接続をオープンにする
 $db = mysql_connect($DBSERVER, $DBUSER, $DBPASSWORD) or die(mysql_error());
-
 // データをUTF8で受け取る
 mysql_query("SET NAMES UTF8");
-
 // データベースを選択する
 $selectdb = mysql_select_db($DBNAME, $db);
-
 ?>
 
 
@@ -25,7 +21,6 @@ $selectdb = mysql_select_db($DBNAME, $db);
 $id = $_GET['id'];
 $recordSet = mysql_query("SELECT * FROM kiso_question WHERE question_id = '$id'", $db);
 $data = mysql_fetch_assoc($recordSet);
-
 ?>
 
 
@@ -44,7 +39,7 @@ $data = mysql_fetch_assoc($recordSet);
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
 	<!--css-->
-	<link href="">
+    <link href="css/queststyle.css" rel="stylesheet" type="text/css">
 		
 </head>
 
@@ -52,10 +47,11 @@ $data = mysql_fetch_assoc($recordSet);
 
 <header>
 	<div class="text-center">
-		<h2>木曽三川公園クイズ</h2><br />
+		<h2>木曽三川公園クイズ</h2>
 		<h4>クイズは全部で5問！！全問正解できるかな</h4>
 	</div>
 </header>
+<br />
 <div class="container">
 
 <div class="col-xs-1">
@@ -63,43 +59,26 @@ $data = mysql_fetch_assoc($recordSet);
 <div class="col-xs-10">
 	<ul class="nav nav-justified">
 		<li><a href="../kiso_guide2.0">ホーム</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
+		<li><a href="spot.php?id=1">農家と水屋(のうかとみずや)</a></li>
+		<li><a href="spot.php?id=2">治水タワー(ちすいタワー)</a></li>
+		<li><a href="spot.php?id=5">治水神社(ちすいじんじゃ)</a></li>
+		<li><a href="spot.php?id=6">締切堤(しめきりてい)</a></li>
+		<li><a href="spot.php?id=8">資料館(しりょうかん)</a></li>
 	</ul><br />
-
-
-		 		<div>
-		 			<h2 class="text-center"><?php echo $data['question_title'];?></h3><br />
-		 			<h3><?php echo $data['question_q'];?></h3><br />
-		 			<img src="photo/<?php echo $data['question_img'];?>.jpg" class="img-responsive">
-		 			<form action="quest.php" method="get">
-		 				<input type="hidden" name="id" value="<?php echo $data['question_id'];?>">
-		 				<input type="submit" name="name" value="<?php echo $data['answer1'];?>">
-		 				<input type="submit" name="name" value="<?php echo $data['answer2'];?>">
-		 				<input type="submit" name="name" value="<?php echo $data['answer3'];?>">
-		 			</form>
-		 			<hr>
-		 			<br /><br />
-
-		 		</div>
-		 		
-		 		<div>
+<div>
 		 			<?php
 		 			//クイズの答えの取得
 					if($_GET['name']){	
 						$answer = $_GET['name'];				 		
 		 				if ($answer == $data['answer_fa']){
-		 			?>		<p>正解の画像</p>
-		 					 <button type="button" onclick="location.href='quest.php?id=<?php echo mt_rand(1,5);?>>'">次の問題へ</button>
+		 			?>		<img src="icon/hanamaru.png" width="100px" height="100px">　正解！
+		 					 <button type="button" onclick="location.href='quest.php?id=<?php echo mt_rand(1,5);?>>'">次の問題へ</button><br />
 		 				<?php
 		 					}else{
 		 				?>
-		 					<p>不正解の画像</p>
+		 					<img src="icon/mark_batsu.png" width="100px" height="100px"> 不正解！
 		 					<p><?php echo $data['quest_text'];?></p>
-		 					<button type="button" onclick="location.href='quest.php?id=<?php echo mt_rand(1,5);?>>'">次の問題へ</button>	
+		 					<button type="button" onclick="location.href='quest.php?id=<?php echo mt_rand(1,5);?>>'">次の問題へ</button><br />
 		 				<?php
 		 					}
 		 				?>
@@ -108,12 +87,37 @@ $data = mysql_fetch_assoc($recordSet);
 		 			?>
 		 			
 		 	 </div>
-	</div>
-<div class="col-xs-1">
+
+<br />
+		 		<div class="col-xs-4">
+
+		 			<h5 class="text-center"><?php echo $data['question_title'];?></h5><br />
+		 			<div id="photoimg"><img src="photo/<?php echo $data['question_img'];?>.jpg"class="img-responsive"></div>
+		 			</div>
+		 		<div class="col-xs-1">
+		 		   </div>
+	 			<div class="col-xs-7">
+		 			<h3>Q.<?php echo $data['question_q'];?></h3>
+		 			<h3>A.
+		 			<br /><br />
+		 			<form action="quest.php" method="get">
+		 				<input type="hidden" name="id" value="<?php echo $data['question_id'];?>">
+		 				<input type="submit" name="name" value="<?php echo $data['answer1'];?>"><br />
+		 				<input type="submit" name="name" value="<?php echo $data['answer2'];?>"><br />
+		 				<input type="submit" name="name" value="<?php echo $data['answer3'];?>"><br />
+		 			</form>
+                         
+		 			<br />
+
+		 		</div>
+		 		
+		 			</div>
+		 			
+	<div  class="col-xs-1">
 </div>
 
 </div>
-
+<br />
 <footer>
 	<h4 class="text-center">&copy;YESLab, Nagoya University</h4>
 </footer>

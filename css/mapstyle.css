@@ -1,0 +1,24 @@
+body{
+	font-size: 20px;
+	color: #666666;
+	letter-spacing: 5px;
+	border: 30px solid#99CCCC
+}
+
+header{
+    font-family:"07YasashisaAntique","MS Pゴシック",sans-serif;
+    font-size: 200%;
+    padding: 20px;
+	text-align: center;
+	letter-spacing: 5pt;
+	margin-top:0px;
+    }
+        
+li{
+        border: 1px solid#99CCCC;
+        }
+
+
+{
+        margin-top: 50px;
+        }

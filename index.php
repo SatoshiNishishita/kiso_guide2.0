@@ -32,39 +32,38 @@ $selectdb = mysql_select_db($DBNAME, $db);
 	<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
 	<!--css-->
+	<link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
 <header>
 	<div class="text-center">
-		<h2>木曽三川公園がくしゅうガイド</h2><br />
-		<h4>現地に住む人のかいせつを聞いてクイズにチャレンジしよう</h4>
+		<h2>木曽三川公園がくしゅうガイド</h2><br/>
+		<h3>現地に住む人のかいせつを聞いてクイズにチャレンジしよう</h3>
 	</div>
 </header>
 
 
 <br />
-<br />
-<br />
+
 
 <div class="container">
 	<ul class="nav nav-justified">
 		<li><a href="../kiso_guide2.0">ホーム</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
-		<li><a href ="spot.php">各スポット</a></li>
-	</ul>
-	<br />
+		<li><a href="spot.php?id=1">農家と水屋(のうかとみずや)</a></li>
+		<li><a href="spot.php?id=2">治水タワー(ちすいタワー)</a></li>
+		<li><a href="spot.php?id=5">治水神社(ちすいじんじゃ)</a></li>
+		<li><a href="spot.php?id=6">締切堤(しめきりてい)</a></li>
+		<li><a href="spot.php?id=8">資料館(しりょうかん)</a></li>
+	</ul><br />
 
 	<div class="text-center">
 	<div class="col-xs-6">
-		<button type="button" onclick="location.href= 'map.php'">学ぶ</button>
+		<button1 type="button" onclick="location.href= 'map.php'"><img src="icon/pencil.png" width="200px" height="200px"><br/>学ぶ</button>
 	</div>
 	<div class="col-xs-6">
-		<button type="button" onclick="location.href= 'quest.php?id=1'">クイズ</button>
+		<button2 type="button" onclick="location.href= 'quest.php?id=1'"><img src="icon/quiz.png" width="200px" height="200px"><br/>クイズ</button>
 	</div>
 	</div>
 
