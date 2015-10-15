@@ -57,11 +57,14 @@ $recordSet = mysql_query('SELECT * FROM kiso_spot WHERE spot_boolean =1',$db);
 
 	<div class="col-xs-8">
 		<div class="text-center">
+		<div id="map"><img src="photo/map.png" width="100%" class="img-responsive"></div>
 		</div>
 	</div>
 	
 	<!--スポットをリスト表示する-->
 	<div class="col-xs-4">
+	<h3 class="text-center">スポットリスト</h3><br />
+
 		<?php
 			//while分で$recordSetからデータベースのスポット情報を一つずつ取り出す
 			while($data = mysql_fetch_assoc($recordSet)){
@@ -79,10 +82,8 @@ $recordSet = mysql_query('SELECT * FROM kiso_spot WHERE spot_boolean =1',$db);
 	</div>
 
 
-<div class="container">
+</div>
 
-<br />
-<br />
 <br />
 
 <footer>

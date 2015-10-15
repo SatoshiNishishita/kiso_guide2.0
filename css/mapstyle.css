@@ -22,3 +22,7 @@ li{
 {
         margin-top: 50px;
         }
+
+#map{
+	border: solid 1px #99CCCC;
+}
