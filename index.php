@@ -60,10 +60,10 @@ $selectdb = mysql_select_db($DBNAME, $db);
 
 	<div class="text-center">
 	<div class="col-xs-6">
-		<button1 type="button" onclick="location.href= 'map.php'"><img src="icon/pencil.png" width="200px" height="200px"><br/>学ぶ</button>
+		<button1 type="button" onclick="location.href= 'map.php'"><img src="photo/manabi.png" width="100%" class="img-responsive"></button>
 	</div>
 	<div class="col-xs-6">
-		<button2 type="button" onclick="location.href= 'quest.php?id=1'"><img src="icon/quiz.png" width="200px" height="200px"><br/>クイズ</button>
+		<button2 type="button" onclick="location.href= 'quest.php?id=0'"><img src="photo/quiz.png" width="100%" class="img-responsive"></button>
 	</div>
 	</div>
 

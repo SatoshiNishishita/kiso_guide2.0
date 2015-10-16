@@ -1,5 +1,6 @@
 <?php
 //クイズのページ
+session_start();
 ?>
 
 <?php
@@ -13,14 +14,33 @@ mysql_query("SET NAMES UTF8");
 $selectdb = mysql_select_db($DBNAME, $db);
 ?>
 
+<?php
 
+if ($_GET['id'] == 0){
+	$number =  range(1,5);
+	shuffle($number);
+
+	$_SESSION['session_number'] = $number;
+	$_SESSION['session_id'] = 0;
+}
+?>
+
+<?php
+
+	//var_dump($_SESSION['session_number']);
+	//var_dump($_SESSION['session_id']);
+?>
 
 
 
 <?php
-$id = $_GET['id'];
-$recordSet = mysql_query("SELECT * FROM kiso_question WHERE question_id = '$id'", $db);
+$session_id = $_SESSION['session_id'];
+//var_dump($session_id);
+$i = $_SESSION['session_number'][$session_id];
+$recordSet = mysql_query("SELECT * FROM kiso_question WHERE question_id = '$i'", $db);
+//var_dump($i);
 $data = mysql_fetch_assoc($recordSet);
+
 ?>
 
 
@@ -40,6 +60,17 @@ $data = mysql_fetch_assoc($recordSet);
 
 	<!--css-->
     <link href="css/queststyle.css" rel="stylesheet" type="text/css">
+    
+<!--トラッキングID-->	
+<script>
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  	ga('create', 'UA-68916506-1', 'auto');
+	ga('send', 'pageview');
+</script>
+    
 		
 </head>
 
@@ -69,23 +100,30 @@ $data = mysql_fetch_assoc($recordSet);
 		 			<?php
 		 			//クイズの答えの取得
 					if($_GET['name']){	
-						$answer = $_GET['name'];				 		
+						$answer = $_GET['name'];	 		
 		 				if ($answer == $data['answer_fa']){
+		 					$_SESSION['session_id'] ++;
+	 						if($_SESSION['session_id'] == 5){
 		 			?>		<img src="icon/hanamaru.png" width="100px" height="100px">　正解！
-		 					 <button type="button" onclick="location.href='quest.php?id=<?php echo mt_rand(1,5);?>>'">次の問題へ</button><br />
-		 				<?php
+		 					<button type="button" onclick="location.href='kekka.php'">結果へ</button><br />
+		 			<?php		
 		 					}else{
+		 			?>		<img src="icon/hanamaru.png" width="100px" height="100px">　正解！
+		 					<button type="button" onclick="location.href='quest.php?id=1'">次の問題へ</button><br />
+		 			<?php
+		 					}
+		 				}else{
 		 				?>
+		 					<?php $_SESSION['session_id'] ++;?>
 		 					<img src="icon/mark_batsu.png" width="100px" height="100px"> 不正解！
 		 					<p><?php echo $data['quest_text'];?></p>
-		 					<button type="button" onclick="location.href='quest.php?id=<?php echo mt_rand(1,5);?>>'">次の問題へ</button><br />
+		 					<button type="button" onclick="location.href='quest.php?id=1'">次の問題へ</button><br />
 		 				<?php
 		 					}
 		 				?>
 		 			<?php
 		 			}
-		 			?>
-		 			
+		 			?>		 			
 		 	 </div>
 
 <br />
@@ -101,7 +139,7 @@ $data = mysql_fetch_assoc($recordSet);
 		 			<h3>A.
 		 			<br /><br />
 		 			<form action="quest.php" method="get">
-		 				<input type="hidden" name="id" value="<?php echo $data['question_id'];?>">
+		 				<input type="hidden" name="id" value="1"> 
 		 				<input type="submit" name="name" value="<?php echo $data['answer1'];?>"><br />
 		 				<input type="submit" name="name" value="<?php echo $data['answer2'];?>"><br />
 		 				<input type="submit" name="name" value="<?php echo $data['answer3'];?>"><br />

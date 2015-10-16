@@ -57,7 +57,7 @@ $recordSet = mysql_query('SELECT * FROM kiso_spot WHERE spot_boolean =1',$db);
 
 	<div class="col-xs-8">
 		<div class="text-center">
-		<div id="map"><img src="photo/map.png" width="100%" class="img-responsive"></div>
+		 <div id="map"><img src="photo/map.png" class="img-responsive" width="100%"></div>
 		</div>
 	</div>
 	
